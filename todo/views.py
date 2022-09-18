@@ -8,8 +8,10 @@ from .forms import TodoForm
 
 def home(request):
     todos = Todo.objects.all()
+    form = TodoForm()
     context = {
-        "todos": todos
+        "todos": todos,
+        "form": form
     }
     return render(request, "todo/home.html", context)
 
