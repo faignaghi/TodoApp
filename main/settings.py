@@ -14,12 +14,6 @@ import os
 from pathlib import Path
 from decouple import config
 import django_heroku
-import dj_database_url
-db_config = dj_database_url.config(default='postgres://publicpeople@localhost/publicpeople')
-db_config['ATOMIC_REQUESTS'] = True
-DATABASES = {
-    'default': db_config,
-}
 
 
 
@@ -93,6 +87,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 # Password validation
