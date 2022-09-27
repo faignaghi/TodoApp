@@ -8,10 +8,10 @@ from django.contrib import messages
 # Create your views here.
 
 def home(request):
-    todoss = Todo.objects.all()
+    todos = Todo.objects.all()
     form = TodoForm()
     context = {
-        "todoss": todoss,
+        "todos": todos,
         "form": form
     }
     return render(request, "todo/home.html", context)
