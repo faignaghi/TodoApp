@@ -21,7 +21,7 @@
 
             <div class="col">
                 <div class="border">
-                    {% if todos|length == 0 %}
+                    {% if todoss|length == 0 %}
                     <div class="p-4">
                         <br>
                         <br>
@@ -45,7 +45,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for todo in todos %}
+                                {% for todo in todoss %}
                                 <tr>
                                     <td>{{forloop.counter}}</td>
                                     <td>{{todo.title}}</td>
