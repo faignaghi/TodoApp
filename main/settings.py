@@ -14,6 +14,13 @@ import os
 from pathlib import Path
 from decouple import config
 import django_heroku
+import dj_database_url
+db_config = dj_database_url.config(default='postgres://publicpeople@localhost/publicpeople')
+db_config['ATOMIC_REQUESTS'] = True
+DATABASES = {
+    'default': db_config,
+}
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -121,7 +128,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
